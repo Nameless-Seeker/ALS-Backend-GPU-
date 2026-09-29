@@ -1,0 +1,16 @@
+services:
+  piper:
+    image: ghcr.io/dmgiulioromano/tts-daemon
+    container_name: piper-tts
+
+    ports:
+      - "5111:5111"
+
+    environment:
+      PORT: 5111
+
+    volumes:
+      - ./piper-data:/data
+
+    restart: unless-stopped
+

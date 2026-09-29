@@ -1,0 +1,35 @@
+[project]
+name = "backend"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.12"
+
+dependencies = [
+    "accelerate>=1.15.0",
+    "datasets>=5.0.1",
+    "evaluate>=0.4.6",
+    "fastapi[standard]>=0.141.1",
+    "httpx>=0.28.1",
+    "jiwer>=4.0.0",
+    "librosa>=1.0.0",
+    "python-dotenv>=1.2.3",
+    "python-multipart>=0.0.32",
+    "soundfile>=0.14.0",
+    "torch==2.11.0+cu128",
+    "torchaudio==2.11.0+cu128",
+    "torchcodec>=0.16.0",
+    "transformers>=5.17.0",
+    "uvicorn>=0.54.0",
+]
+
+[[tool.uv.index]]
+name = "pytorch"
+url = "https://download.pytorch.org/whl/cu128"
+
+[tool.uv.sources]
+torch = { index = "pytorch" }
+torchaudio = { index = "pytorch" }
+
+[tool.uv]
+index-strategy = "unsafe-best-match"
